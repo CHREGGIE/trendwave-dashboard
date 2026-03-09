@@ -1,6 +1,11 @@
 import { use } from "react";
 
-export default function ClientLayout({ children, params }) {
+interface ClientLayoutProps {
+  children: React.ReactNode;
+  params: Promise<{ clientId: string }>;
+}
+
+export default function ClientLayout({ children, params }: ClientLayoutProps) {
   const { clientId } = use(params);
 
   return (
