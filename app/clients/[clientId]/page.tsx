@@ -15,7 +15,11 @@ import {
   TableCell,
 } from "@tremor/react";
 
-export default function ClientOverviewPage({ params }) {
+interface ClientOverviewPageProps {
+  params: Promise<{ clientId: string }>;
+}
+
+export default function ClientOverviewPage({ params }: ClientOverviewPageProps) {
   const { clientId } = use(params);
 
   // Example data — replace with real data later
